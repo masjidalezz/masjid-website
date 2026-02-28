@@ -1,12 +1,16 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
+// Temporary redirect — keep in sync with DONATE_URL in Router.tsx
+// const DONATE_URL = 'https://app.irm.io/masjidalezz.com/where-most-needed';
+const DONATE_URL = 'https://www.launchgood.com/v4/pledge/support_something_special_help_keep_masjid_al_ezz_running_1';
+
 export default function Donate() {
   const navigate = useNavigate();
 
   useEffect(() => {
     // Redirect to the external donation URL
-    window.location.href = 'https://app.irm.io/masjidalezz.com/where-most-needed';
+    window.location.href = DONATE_URL;
   }, [navigate]);
 
   return (
@@ -20,7 +24,7 @@ export default function Donate() {
         <p className="mt-8 text-sm text-gray-500">
           If you are not redirected automatically, 
           <a 
-            href="https://app.irm.io/masjidalezz.com/where-most-needed" 
+            href={DONATE_URL}
             className="text-primary hover:underline ml-1"
           >
             click here

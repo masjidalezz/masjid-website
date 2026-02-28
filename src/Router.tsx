@@ -8,6 +8,11 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Donate from "@/pages/Donate";
 
+// Temporary: both routes redirect to LaunchGood. To revert, remove LAUNCHGOOD_URL and restore the originals.
+const LAUNCHGOOD_URL = 'https://www.launchgood.com/v4/pledge/support_something_special_help_keep_masjid_al_ezz_running_1';
+const DONATE_URL = LAUNCHGOOD_URL; // original: 'https://app.irm.io/masjidalezz.com/where-most-needed'
+const FUNDRAISER_URL = LAUNCHGOOD_URL; // original: 'https://app.irm.io/masjidalezz.com/payoffmasjidloan'
+
 const AppRoutes: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
@@ -24,7 +29,7 @@ const AppRoutes: React.FC = () => {
   // Handle hash-based routing for /#donate
   useEffect(() => {
     if (window.location.hash === '#donate') {
-      window.location.href = 'https://app.irm.io/masjidalezz.com/where-most-needed';
+      window.location.href = DONATE_URL;
     }
   }, [location.hash]);
 
@@ -50,7 +55,7 @@ const AppRoutes: React.FC = () => {
 // Component to handle external redirect
 const FundraiserRedirect: React.FC = () => {
   useEffect(() => {
-    window.location.href = 'https://app.irm.io/masjidalezz.com/payoffmasjidloan';
+    window.location.href = FUNDRAISER_URL;
   }, []);
   
   return null;
