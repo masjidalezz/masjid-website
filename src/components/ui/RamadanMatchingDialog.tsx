@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { LAUNCHGOOD_DONATE_URL } from "@/config";
 
-const RAISED = 24000;
+const RAISED = 37541;
 const GOAL = 50000;
+const MATCH_BONUS = 10000;
 const REMAINING = GOAL - RAISED;
 const DEADLINE = "March 9";
 const PROGRESS_PCT = Math.round((RAISED / GOAL) * 100);
+const DONORS_AT_100 = Math.ceil(REMAINING / 100);
+const DONORS_AT_200 = Math.ceil(REMAINING / 200);
 
 export function RamadanMatchingDialog() {
   const [isOpen, setIsOpen] = useState(true);
@@ -53,9 +56,9 @@ export function RamadanMatchingDialog() {
           <h2 className="text-white text-xl font-bold font-serif leading-snug">
             🚨 Ramadan Matching Opportunity
           </h2>
-          <p className="text-white/75 text-sm mt-2 leading-relaxed">
+          <p className="text-white/90 text-sm mt-2 leading-relaxed">
             LaunchGood will add{" "}
-            <span className="text-amber-300 font-semibold">$10,000</span> to the
+            <span className="text-amber-300 font-semibold">${MATCH_BONUS.toLocaleString()}</span> to the
             masjid if we reach ${GOAL.toLocaleString()} in online donations by{" "}
             {DEADLINE}.
           </p>
@@ -81,9 +84,9 @@ export function RamadanMatchingDialog() {
         {/* Body */}
         <div className="bg-white px-6 py-5 space-y-4">
           <p className="text-gray-700 text-sm leading-relaxed">
-            💡 If just <strong>260 people give $100</strong> — or 130 give $200
-            — the full{" "}
-            <strong className="text-primary">$10,000 bonus</strong> gets
+            💡 If just <strong>{DONORS_AT_100} people give $100</strong> — or{" "}
+            {DONORS_AT_200} give $200 — the full{" "}
+            <strong className="text-primary">${MATCH_BONUS.toLocaleString()} bonus</strong> gets
             unlocked for the House of Allah.
           </p>
 
