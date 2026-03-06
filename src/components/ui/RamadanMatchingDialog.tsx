@@ -10,6 +10,9 @@ const DEADLINE = "March 9";
 const PROGRESS_PCT = Math.round((RAISED / GOAL) * 100);
 const DONORS_AT_100 = Math.ceil(REMAINING / 100);
 const DONORS_AT_200 = Math.ceil(REMAINING / 200);
+const RAISED_K = (RAISED / 1000).toFixed(0);
+const GOAL_K = (GOAL / 1000).toFixed(0);
+const MATCH_BONUS_K = (MATCH_BONUS / 1000).toFixed(0);
 
 export function RamadanMatchingDialog() {
   const [isOpen, setIsOpen] = useState(true);
@@ -67,8 +70,8 @@ export function RamadanMatchingDialog() {
         {/* Progress */}
         <div className="bg-primary/10 px-6 py-4">
           <div className="flex justify-between text-xs font-medium text-gray-500 mb-2">
-            <span>Raised: ~${(RAISED / 1000).toFixed(0)}k</span>
-            <span>Goal: ${(GOAL / 1000).toFixed(0)}k</span>
+            <span>Raised: ~${RAISED_K}k</span>
+            <span>Goal: ${GOAL_K}k</span>
           </div>
           <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden">
             <div
@@ -100,7 +103,7 @@ export function RamadanMatchingDialog() {
             rel="noopener noreferrer"
             className="block w-full bg-amber-400 hover:bg-amber-500 text-gray-900 font-bold text-center py-3 rounded-xl transition-colors text-sm"
           >
-            Donate Now &amp; Help Unlock $10k
+            Donate Now &amp; Help Unlock ${MATCH_BONUS_K}k
           </a>
 
           <p className="text-center text-xs text-gray-400">
