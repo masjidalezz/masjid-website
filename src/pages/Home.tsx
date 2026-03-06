@@ -12,10 +12,12 @@ import { FeaturedEvent } from "@/components/home/FeaturedEvent";
 import Gallery from "@/components/home/Gallery";
 import { SectionDivider } from "@/components/ui/SectionDivider";
 import { Ramadan } from "@/components/home/Ramadan";
+import { RamadanMatchingDialog } from "@/components/ui/RamadanMatchingDialog";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
+      <RamadanMatchingDialog />
       <Navbar />
       <main className="flex flex-col items-center w-full">
         {/* Hero Section */}
