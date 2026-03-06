@@ -1,9 +1,10 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LAUNCHGOOD_DONATE_URL } from '@/config';
 
-// Temporary redirect — keep in sync with DONATE_URL in Router.tsx
-// const DONATE_URL = 'https://app.irm.io/masjidalezz.com/where-most-needed';
-const DONATE_URL = 'https://www.launchgood.com/v4/pledge/support_something_special_help_keep_masjid_al_ezz_running_1';
+// Temporary redirect — to revert, replace LAUNCHGOOD_DONATE_URL with:
+// 'https://app.irm.io/masjidalezz.com/where-most-needed'
+const DONATE_URL = LAUNCHGOOD_DONATE_URL;
 
 export default function Donate() {
   const navigate = useNavigate();

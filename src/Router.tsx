@@ -7,11 +7,13 @@ import Programs from "@/pages/Programs";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import Donate from "@/pages/Donate";
+import { LAUNCHGOOD_DONATE_URL } from "@/config";
 
-// Temporary: both routes redirect to LaunchGood. To revert, remove LAUNCHGOOD_URL and restore the originals.
-const LAUNCHGOOD_URL = 'https://www.launchgood.com/v4/pledge/support_something_special_help_keep_masjid_al_ezz_running_1';
-const DONATE_URL = LAUNCHGOOD_URL; // original: 'https://app.irm.io/masjidalezz.com/where-most-needed'
-const FUNDRAISER_URL = LAUNCHGOOD_URL; // original: 'https://app.irm.io/masjidalezz.com/payoffmasjidloan'
+// Temporary: both routes redirect to LaunchGood. To revert, restore the originals:
+// DONATE_URL = 'https://app.irm.io/masjidalezz.com/where-most-needed'
+// FUNDRAISER_URL = 'https://app.irm.io/masjidalezz.com/payoffmasjidloan'
+const DONATE_URL = LAUNCHGOOD_DONATE_URL;
+const FUNDRAISER_URL = LAUNCHGOOD_DONATE_URL;
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
