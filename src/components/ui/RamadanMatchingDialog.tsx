@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { X } from "lucide-react";
-
-const DONATE_URL =
-  "https://launchgood.com/v4/pledge/support_something_special_help_keep_masjid_al_ezz_running_1";
+import { LAUNCHGOOD_DONATE_URL } from "@/config";
 
 const RAISED = 24000;
 const GOAL = 50000;
+const REMAINING = GOAL - RAISED;
 const DEADLINE = "March 9";
+const PROGRESS_PCT = Math.round((RAISED / GOAL) * 100);
 
 export function RamadanMatchingDialog() {
   const [isOpen, setIsOpen] = useState(true);
@@ -27,8 +27,6 @@ export function RamadanMatchingDialog() {
   }, [isOpen]);
 
   if (!isOpen) return null;
-
-  const progressPct = Math.round((RAISED / GOAL) * 100);
 
   return (
     <div
@@ -58,24 +56,25 @@ export function RamadanMatchingDialog() {
           <p className="text-white/75 text-sm mt-2 leading-relaxed">
             LaunchGood will add{" "}
             <span className="text-amber-300 font-semibold">$10,000</span> to the
-            masjid if we reach $50,000 in online donations by {DEADLINE}.
+            masjid if we reach ${GOAL.toLocaleString()} in online donations by{" "}
+            {DEADLINE}.
           </p>
         </div>
 
         {/* Progress */}
         <div className="bg-primary/10 px-6 py-4">
           <div className="flex justify-between text-xs font-medium text-gray-500 mb-2">
-            <span>Raised: ~$24k</span>
-            <span>Goal: $50k</span>
+            <span>Raised: ~${(RAISED / 1000).toFixed(0)}k</span>
+            <span>Goal: ${(GOAL / 1000).toFixed(0)}k</span>
           </div>
           <div className="h-2.5 bg-gray-200 rounded-full overflow-hidden">
             <div
               className="h-full bg-amber-400 rounded-full"
-              style={{ width: `${progressPct}%` }}
+              style={{ width: `${PROGRESS_PCT}%` }}
             />
           </div>
           <p className="text-xs text-gray-500 mt-1.5 text-right">
-            ~$26,000 remaining to unlock the match
+            ~${REMAINING.toLocaleString()} remaining to unlock the match
           </p>
         </div>
 
@@ -93,7 +92,7 @@ export function RamadanMatchingDialog() {
           </p>
 
           <a
-            href={DONATE_URL}
+            href={LAUNCHGOOD_DONATE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="block w-full bg-amber-400 hover:bg-amber-500 text-gray-900 font-bold text-center py-3 rounded-xl transition-colors text-sm"
