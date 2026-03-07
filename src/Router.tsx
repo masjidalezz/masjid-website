@@ -14,6 +14,7 @@ import { LAUNCHGOOD_DONATE_URL } from "@/config";
 // FUNDRAISER_URL = 'https://app.irm.io/masjidalezz.com/payoffmasjidloan'
 const DONATE_URL = LAUNCHGOOD_DONATE_URL;
 const FUNDRAISER_URL = LAUNCHGOOD_DONATE_URL;
+const FUNDRAISE_URL = LAUNCHGOOD_DONATE_URL;
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
@@ -43,6 +44,7 @@ const AppRoutes: React.FC = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/donate" element={<Donate />} />
+      <Route path="/fundraise" element={<FundraiseRedirect />} />
       <Route 
         path="/fundraiser" 
         element={
@@ -54,7 +56,7 @@ const AppRoutes: React.FC = () => {
   );
 };
 
-// Component to handle external redirect
+// Components to handle external redirect
 const FundraiserRedirect: React.FC = () => {
   useEffect(() => {
     window.location.href = FUNDRAISER_URL;
@@ -62,5 +64,13 @@ const FundraiserRedirect: React.FC = () => {
   
   return null;
 };
+
+const FundraiseRedirect: React.FC = () => {
+  useEffect(() => {
+    window.location.href = FUNDRAISE_URL;
+  }, []);
+
+  return null;
+}
 
 export default AppRoutes;

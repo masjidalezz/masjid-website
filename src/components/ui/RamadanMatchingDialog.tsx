@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 import { LAUNCHGOOD_DONATE_URL } from "@/config";
 
-const RAISED = 23645;
+const RAISED = 25396;
 const GOAL = 50000;
 const MATCH_BONUS = 10000;
 const REMAINING = GOAL - RAISED;
