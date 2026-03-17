@@ -6,16 +6,17 @@ import EventCalendar from "@/pages/EventCalendar";
 import Programs from "@/pages/Programs";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
-import Donate from "@/pages/Donate";
+
+const DONATE_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/where-most-needed";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
-  
+
   // Handle redirects from 404.html
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const redirect = params.get('redirect');
+    const redirect = params.get("redirect");
     if (redirect) {
       navigate(redirect, { replace: true });
     }
@@ -23,8 +24,8 @@ const AppRoutes: React.FC = () => {
 
   // Handle hash-based routing for /#donate
   useEffect(() => {
-    if (window.location.hash === '#donate') {
-      window.location.href = 'https://app.irm.io/masjidalezz.com/where-most-needed';
+    if (window.location.hash === "#donate") {
+      window.location.href = DONATE_REDIRECT_URL;
     }
   }, [location.hash]);
 
@@ -35,24 +36,19 @@ const AppRoutes: React.FC = () => {
       <Route path="/programs" element={<Programs />} />
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
-      <Route path="/donate" element={<Donate />} />
-      <Route 
-        path="/fundraiser" 
-        element={
-          <FundraiserRedirect />
-        } 
-      />
+      <Route path="/donate" element={<DonateRedirect />} />
+      <Route path="/Donate" element={<DonateRedirect />} />
+      <Route path="/fundraiser" element={<DonateRedirect />} />
+      <Route path="/Fundraise" element={<DonateRedirect />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };
 
-// Component to handle external redirect
-const FundraiserRedirect: React.FC = () => {
+const DonateRedirect: React.FC = () => {
   useEffect(() => {
-    window.location.href = 'https://app.irm.io/masjidalezz.com/payoffmasjidloan';
+    window.location.href = DONATE_REDIRECT_URL;
   }, []);
-  
   return null;
 };
 
