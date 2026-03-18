@@ -7,7 +7,7 @@ import Programs from "@/pages/Programs";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 
-const DONATE_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/where-most-needed";
+const DONATE_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/maintainthehouseofallah";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
@@ -37,9 +37,8 @@ const AppRoutes: React.FC = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/donate" element={<DonateRedirect />} />
-      <Route path="/Donate" element={<DonateRedirect />} />
       <Route path="/fundraiser" element={<DonateRedirect />} />
-      <Route path="/Fundraise" element={<DonateRedirect />} />
+      <Route path="/fundraise" element={<DonateRedirect />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
