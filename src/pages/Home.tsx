@@ -11,13 +11,12 @@ import { VideoReels } from "@/components/home/VideoReels";
 import { FeaturedEvent } from "@/components/home/FeaturedEvent";
 import Gallery from "@/components/home/Gallery";
 import { SectionDivider } from "@/components/ui/SectionDivider";
-import { Ramadan } from "@/components/home/Ramadan";
-import { RamadanMatchingDialog } from "@/components/ui/RamadanMatchingDialog";
+import { EventPopup } from "@/components/home/EventPopup";
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
-      <RamadanMatchingDialog />
+      <EventPopup />
       <Navbar />
       <main className="flex flex-col items-center w-full">
         {/* Hero Section */}
@@ -59,9 +58,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        {/* Ramadan Section */}
-        <Ramadan />
 
         {/* Video Reels Section - Only show if there are videos */}
         <VideoReels>

@@ -9,9 +9,18 @@ import img4 from '@/assets/images/photo_2025-09-21 10.19.54.jpeg';
 import img5 from '@/assets/images/photo_2025-09-21 10.20.02.jpeg';
 import img6 from '@/assets/images/photo_2025-09-21 10.20.14.jpeg';
 import img7 from '@/assets/images/photo_2025-09-21 10.20.25.jpeg';
+import img8 from '@/assets/images/photo_2026-03-19 09.25.45.jpeg';
+import img9 from '@/assets/images/photo_2026-03-19 09.25.49.jpeg';
+import img10 from '@/assets/images/photo_2026-03-19 09.25.53.jpeg';
+import img11 from '@/assets/images/photo_2026-03-19 09.26.57.jpeg';
+import img12 from '@/assets/images/photo_2026-03-19 09.27.02.jpeg';
+import img13 from '@/assets/images/photo_2026-03-19 09.27.18.jpeg';
+import img14 from '@/assets/images/photo_2026-03-19 09.27.22.jpeg';
+import img15 from '@/assets/images/photo_2026-03-19 09.27.25.jpeg';
+import img16 from '@/assets/images/photo_2026-03-19 09.27.36.jpeg';
 
 const Gallery = () => {
-    // Function to shuffle array
+  // Function to shuffle array
   const shuffleArray = (array: string[]) => {
     const newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -22,20 +31,20 @@ const Gallery = () => {
   };
 
   // Initialize with all images
-  const allImages = [img1, img2, img3, img4, img5, img6, img7];
-  
+  const allImages = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15, img16];
+
   // State for shuffled images
   const [images, setImages] = useState<string[]>([]);
-  
+
   // Shuffle images on component mount and set up auto-play
   useEffect(() => {
     setImages(shuffleArray(allImages));
-    
+
     // Start with auto-play enabled
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % allImages.length);
     }, 5000); // Change image every 5 seconds
-    
+
     return () => clearInterval(interval);
   }, []);
 
@@ -54,7 +63,7 @@ const Gallery = () => {
   // Handle auto-play with pause on hover
   useEffect(() => {
     if (!isAutoPlay) return;
-    
+
     const interval = setInterval(() => {
       setCurrentIndex(prev => (prev + 1) % (images.length || 1));
     }, 5000); // Change image every 5 seconds
@@ -70,10 +79,10 @@ const Gallery = () => {
     >
       <div className="w-full max-w-[100vw] sm:max-w-full sm:px-6">
         <div className="relative w-full max-w-6xl mx-auto">
-        
+
           <div className="max-w-6xl mx-auto h-full">
             {/* Main Image */}
-            <div 
+            <div
               className="w-full flex items-center justify-center bg-black/10 relative group h-[70vh] md:h-[60vh]"
               onMouseEnter={() => setIsAutoPlay(false)}
               onMouseLeave={() => setIsAutoPlay(true)}
@@ -92,64 +101,62 @@ const Gallery = () => {
                 </div>
               )}
             </div>
-          
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full focus:outline-none transition-all duration-200"
-            aria-label="Previous image"
+
+            {/* Navigation Arrows */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full focus:outline-none transition-all duration-200"
+              aria-label="Previous image"
+            >
+              <ChevronLeftIcon className="h-6 w-6" />
+            </button>
+            <button
+              onClick={nextSlide}
+              className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full focus:outline-none transition-all duration-200"
+              aria-label="Next image"
+            >
+              <ChevronRightIcon className="h-5 w-5" />
+            </button>
+
+            {/* Dots Indicator */}
+            <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1.5">
+              {images.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`h-2 w-2 rounded-full transition-all duration-200 ${index === currentIndex ? 'bg-white w-4' : 'bg-white/50'
+                    }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Thumbnails */}
+          <div
+            className="hidden sm:flex justify-center mt-6 space-x-2"
+            onMouseEnter={() => setIsAutoPlay(false)}
+            onMouseLeave={() => setIsAutoPlay(true)}
           >
-            <ChevronLeftIcon className="h-6 w-6" />
-          </button>
-          <button
-            onClick={nextSlide}
-            className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-1.5 md:p-2 rounded-full focus:outline-none transition-all duration-200"
-            aria-label="Next image"
-          >
-            <ChevronRightIcon className="h-5 w-5" />
-          </button>
-          
-          {/* Dots Indicator */}
-          <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-1.5">
-            {images.map((_, index) => (
+            {images.map((img, index) => (
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 w-2 rounded-full transition-all duration-200 ${
-                  index === currentIndex ? 'bg-white w-4' : 'bg-white/50'
-                }`}
-                aria-label={`Go to slide ${index + 1}`}
-              />
+                className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${index === currentIndex ? 'border-amber-400' : 'border-transparent'
+                  }`}
+              >
+                <img
+                  src={img}
+                  alt={`Thumbnail ${index + 1}`}
+                  className="w-full h-full object-cover"
+                />
+              </button>
             ))}
           </div>
         </div>
-        
-        {/* Thumbnails */}
-        <div 
-          className="hidden sm:flex justify-center mt-6 space-x-2"
-          onMouseEnter={() => setIsAutoPlay(false)}
-          onMouseLeave={() => setIsAutoPlay(true)}
-        >
-          {images.map((img, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentIndex(index)}
-              className={`w-16 h-16 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
-                index === currentIndex ? 'border-amber-400' : 'border-transparent'
-              }`}
-            >
-              <img
-                src={img}
-                alt={`Thumbnail ${index + 1}`}
-                className="w-full h-full object-cover"
-              />
-            </button>
-          ))}
-        </div>
       </div>
     </div>
-  </div>
-);
+  );
 };
 
 export default Gallery;
