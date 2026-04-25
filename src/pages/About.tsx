@@ -201,9 +201,9 @@ export default function About() {
                       <br />
                       <br />
                       He holds a degree in Electrical Engineering from Toronto
-                      Metropolitan University, a Bachelor of Education from the
+                      Metropolitan University, a Bachelor's in Education from the
                       University of Toronto, and a Master's in Education from
-                      Brock University. He's also completing a Bachelor's in
+                      Brock University. He is also completing a Bachelor's in
                       Islamic Studies from Mishkah University.
                     </p>
                   </div>
