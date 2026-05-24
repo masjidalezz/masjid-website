@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 // Import the masjid logo
 import logo from "@assets/logo.png";
-import sheikhRasool from "@/assets/sheikh_rasool.jpg";
+import sheikhSalah from "@/assets/sheikh_salah.jpg";
 import sheikhUsta from "@/assets/sheikh_usta.jpg";
 
 export default function About() {
@@ -185,27 +185,16 @@ export default function About() {
                   {/* Image first on mobile, last on desktop */}
                   <div className="md:w-1/3 order-1 md:order-2">
                     <img
-                      src={sheikhRasool}
-                      alt="Sheikh Abdulaziz Rasoul"
+                      src={sheikhSalah}
+                      alt="Sheikh Salah"
                       className="w-full h-full object-cover object-center"
                     />
                   </div>
                   <div className="md:w-2/3 p-6 md:text-right order-2 md:order-1">
                     <h3 className="text-xl font-bold text-primary mb-4">
-                      Sheikh Abdulaziz Rasoul
+                      Sheikh Salah
                     </h3>
-                    <p className="text-gray-600">
-                      Sheikh Abdulaziz Rasoul, former principal of ISNA High
-                      School (2010-2024), has been a leader in Islamic education
-                      and community engagement since 2005.
-                      <br />
-                      <br />
-                      He holds a degree in Electrical Engineering from Toronto
-                      Metropolitan University, a Bachelor's in Education from the
-                      University of Toronto, and a Master's in Education from
-                      Brock University. He is also completing a Bachelor's in
-                      Islamic Studies from Mishkah University.
-                    </p>
+                    <p className="text-gray-600"></p>
                   </div>
                 </div>
               </div>
