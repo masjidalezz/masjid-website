@@ -77,6 +77,8 @@ export function Programs({ limit, shuffle, showFilters }: ProgramsProps) {
     {
       title: "Sahaba Stories",
       audience: "family",
+      // Hidden for now — schedule not confirmed. Set to true (or remove) to show again.
+      enabled: false,
       description:
         "🌟 They were the best generation — the Companions of the Prophet ﷺ. They stood by him in hardship and ease, spread his message across the world, and embodied faith, sacrifice, and sincerity like no others. Their lives are living lessons of courage, devotion, and love for Allah and His Messenger ﷺ.\n\n📖 Join us for Sahaba Stories — a weekly journey through the Seerah as seen through the eyes of the Prophet's ﷺ Companions.\n\n🎙️ With Ustad Abu Rasheed",
       schedule: "Every Monday",
@@ -144,6 +146,9 @@ export function Programs({ limit, shuffle, showFilters }: ProgramsProps) {
       link: "https://bit.ly/alezz-weekly-grappling",
     },
   ];
+
+  // Hide programs flagged as not currently running (their data is retained)
+  programs = programs.filter((program) => program.enabled !== false);
 
   // Apply audience/cost filters (controls are rendered on the Programs page)
   if (showFilters) {
