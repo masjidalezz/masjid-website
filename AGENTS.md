@@ -32,7 +32,6 @@ src/
     home/                  # Sections used only on the Home page
       About.tsx
       Donate.tsx
-      EventPopup.tsx
       FeaturedEvent.tsx    # Pulls latest Instagram post (image-only)
       Gallery.tsx
       InstagramEvents.tsx  # Instagram feed via Behold.so API
@@ -78,7 +77,7 @@ Mobile: logo · Donate · WhatsApp · hamburger → animated full-screen overlay
 
 Hardcoded in `src/components/home/Programs.tsx`. Each program has: `title`, `description`, `schedule`, `time`, `cost`, `image`, optional `registrationLink`.
 
-Current programs (8): Sahaba Stories, Youth Qur'an Class, Beginner's Boxing, Sisters Tafsir, Brothers Ilm & Chill, Family Tafsir Night, Sisters Tajweed & Hifdh, Weekly Grappling.
+Current programs (9): Sahaba Stories, Youth Qur'an Class, Beginner's Boxing, Sisters Tafsir, Brothers Ilm & Chill, Family Tafsir Night, Sisters Tajweed & Hifdh, Brothers Tajweed & Hifdh, Weekly Grappling.
 
 ## Conventions
 

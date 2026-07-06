@@ -11,14 +11,6 @@ interface ProgramsProps {
 export function Programs({ limit, shuffle }: ProgramsProps) {
   let programs = [
     {
-      title: "Sahaba Stories",
-      description: "🌟 They were the best generation — the Companions of the Prophet ﷺ. They stood by him in hardship and ease, spread his message across the world, and embodied faith, sacrifice, and sincerity like no others. Their lives are living lessons of courage, devotion, and love for Allah and His Messenger ﷺ.\n\n📖 Join us for Sahaba Stories — a weekly journey through the Seerah as seen through the eyes of the Prophet's ﷺ Companions.\n\n🎙️ With Ustad Abu Rasheed",
-      schedule: "Every Monday",
-      time: "7:30 PM after Isha Salah",
-      image: "https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-      cost: "Free",
-    },
-    {
       title: "Youth Qur'an Class (Ages 6-16)",
       description:
         "Join our Reading, Hifdh & Tajweed class for children ages 6-16. Taught by qualified male and female instructors.",
@@ -27,6 +19,36 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       image: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae",
       cost: "$75/month",
       link: "http://bit.ly/youth-tajweed",
+    },
+    {
+      title: "Tajweed & Hifdh Class (Brothers)",
+      description:
+        "📖 Strengthen your recitation, improve your Tajweed, and deepen your connection with the Qur'an in a focused brothers-only class led by Abu Rasheed, Ijazah in Hafs 'an 'Asim with Sanad to the Messenger (PBUH).",
+      schedule: "Sunday – Wednesday",
+      time: "8:00 PM – 10:00 PM",
+      image:
+        "https://motionarray.imgix.net/motion-array-1512327-E08oh0yQoX-high_0011.jpg",
+      cost: "Free",
+      link: "https://bit.ly/alezz-brothers-hifdh",
+    },
+    {
+      title: "Tajweed & Hifdh Class (Sisters)",
+      description:
+        "Do you listen to Quran reciters and wish you were able to recite the Quran like them? Then you're in the right place! With this program, you'll learn Tajweed and start your Hifth with a teacher of 20+ years of experience and has a sanad.",
+      schedule: "Sundays to Thursdays",
+      time: "11:00 AM - 3:00 PM",
+      image:
+        "https://motionarray.imgix.net/motion-array-1512327-E08oh0yQoX-high_0011.jpg",
+      cost: "See registration form",
+      link: "https://api.leadconnectorhq.com/widget/form/nong0q79d2TaF51IBkCZ",
+    },
+    {
+      title: "Sahaba Stories",
+      description: "🌟 They were the best generation — the Companions of the Prophet ﷺ. They stood by him in hardship and ease, spread his message across the world, and embodied faith, sacrifice, and sincerity like no others. Their lives are living lessons of courage, devotion, and love for Allah and His Messenger ﷺ.\n\n📖 Join us for Sahaba Stories — a weekly journey through the Seerah as seen through the eyes of the Prophet's ﷺ Companions.\n\n🎙️ With Ustad Abu Rasheed",
+      schedule: "Every Monday",
+      time: "7:30 PM after Isha Salah",
+      image: "https://images.pexels.com/photos/220201/pexels-photo-220201.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+      cost: "Free",
     },
     {
       title: "Beginner's Boxing Classes (Brothers 14+)",
@@ -71,17 +93,6 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
       link: "https://api.leadconnectorhq.com/widget/form/pJEMzHOodaksWH2uKr4I",
     },
     {
-      title: "Tajweed & Hifdh Class (Sisters)",
-      description:
-        "Do you listen to Quran reciters and wish you were able to recite the Quran like them? Then you're in the right place! With this program, you'll learn Tajweed and start your Hifth with a teacher of 20+ years of experience and has a sanad.",
-      schedule: "Sundays to Thursdays",
-      time: "11:00 AM - 3:00 PM",
-      image:
-        "https://motionarray.imgix.net/motion-array-1512327-E08oh0yQoX-high_0011.jpg",
-      cost: "See registration form",
-      link: "https://api.leadconnectorhq.com/widget/form/nong0q79d2TaF51IBkCZ",
-    },
-    {
       title: "Weekly Grappling Classes",
       description: "Get ready, brothers! Weekly grappling classes are starting Saturday, January 17 (please note the start date has changed), in partnership with Strike MMA and led by a professional coach.\n\nThese classes are open to brothers and will help you develop grappling skills, improve fitness, and build confidence in a supportive environment.",
       schedule: "Every Saturday, starting January 17",
@@ -94,11 +105,12 @@ export function Programs({ limit, shuffle }: ProgramsProps) {
 
   // Define pinned program titles
   const pinnedTitles = [
-    "Weekly Grappling Classes",
-    "Sahaba Stories",
     "Youth Qur'an Class (Ages 6-16)",
+    "Tajweed & Hifdh Class (Brothers)",
     "Tajweed & Hifdh Class (Sisters)",
+    "Sahaba Stories",
     "Family Tafsir Night",
+    "Weekly Grappling Classes",
   ];
 
   // Pin specific programs at the top
