@@ -30,7 +30,7 @@ export default function ProgramsPage() {
             </p>
           </div>
 
-          <Programs />
+          <Programs showFilters />
         </div>
       </main>
       <Footer />

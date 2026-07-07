@@ -32,7 +32,6 @@ src/
     home/                  # Sections used only on the Home page
       About.tsx
       Donate.tsx
-      EventPopup.tsx
       FeaturedEvent.tsx    # Pulls latest Instagram post (image-only)
       Gallery.tsx
       InstagramEvents.tsx  # Instagram feed via Behold.so API
@@ -76,9 +75,11 @@ Mobile: logo · Donate · WhatsApp · hamburger → animated full-screen overlay
 
 ## Programs Data
 
-Hardcoded in `src/components/home/Programs.tsx`. Each program has: `title`, `description`, `schedule`, `time`, `cost`, `image`, optional `registrationLink`.
+Hardcoded in `src/components/home/Programs.tsx`. Each program has: `title`, `audience` (`youth` | `brothers` | `sisters` | `family`), `description`, `schedule`, `time`, `cost`, `image`, optional `link`.
 
-Current programs (8): Sahaba Stories, Youth Qur'an Class, Beginner's Boxing, Sisters Tafsir, Brothers Ilm & Chill, Family Tafsir Night, Sisters Tajweed & Hifdh, Weekly Grappling.
+Current programs (9): Sahaba Stories, Youth Qur'an Class, Beginner's Boxing, Sisters Tafsir, Brothers Ilm & Chill, Family Tafsir Night, Sisters Tajweed & Hifdh, Brothers Tajweed & Hifdh, Weekly Grappling.
+
+The `Programs` component accepts `showFilters` (used on the `/programs` page) to render an icon-toggle filter dropdown that filters by `audience` and by cost (Free / Paid, where only `cost === "Free"` counts as free).
 
 ## Conventions
 
