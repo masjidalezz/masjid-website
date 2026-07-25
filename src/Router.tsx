@@ -8,6 +8,7 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 
 const DONATE_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/maintainthehouseofallah";
+const FUNDRAISER_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/buildersdinnerfundraising";
 
 const AppRoutes: React.FC = () => {
   const location = useLocation();
@@ -37,8 +38,8 @@ const AppRoutes: React.FC = () => {
       <Route path="/about" element={<About />} />
       <Route path="/contact" element={<Contact />} />
       <Route path="/donate" element={<DonateRedirect />} />
-      <Route path="/fundraiser" element={<DonateRedirect />} />
-      <Route path="/fundraise" element={<DonateRedirect />} />
+      <Route path="/fundraiser" element={<FundraiserRedirect />} />
+      <Route path="/fundraise" element={<FundraiserRedirect />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
@@ -47,6 +48,13 @@ const AppRoutes: React.FC = () => {
 const DonateRedirect: React.FC = () => {
   useEffect(() => {
     window.location.href = DONATE_REDIRECT_URL;
+  }, []);
+  return null;
+};
+
+const FundraiserRedirect: React.FC = () => {
+  useEffect(() => {
+    window.location.href = FUNDRAISER_REDIRECT_URL;
   }, []);
   return null;
 };
