@@ -7,7 +7,7 @@ import Programs from "@/pages/Programs";
 import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 
-const DONATE_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/maintainthehouseofallah";
+const DONATE_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/help_masjidalezz_stay_open";
 const FUNDRAISER_REDIRECT_URL = "https://app.irm.io/masjidalezz.com/buildersdinnerfundraising";
 
 const AppRoutes: React.FC = () => {
