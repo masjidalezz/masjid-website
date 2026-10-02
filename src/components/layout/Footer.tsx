@@ -48,7 +48,7 @@ export function Footer({ className = '' }: FooterProps) {
             </a>
           </div>
           <p className="text-white/70 text-sm">
-            We are a registered charity with the CRA. Peel Muslim Community Centre (PMCC). Charitable Registration No. 700208937RC0001
+            We are a registered charity with the CRA. Peel Muslim Community Centre (PMCC). Charitable Registration No. 700208937RR0001
             <br />
             
           </p>
