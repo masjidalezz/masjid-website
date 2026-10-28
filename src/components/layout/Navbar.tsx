@@ -90,7 +90,7 @@ export function Navbar() {
               <HeartHandshake className="mr-1.5 h-4 w-4" /> Donate
             </Link>
             <a
-              href="https://chat.whatsapp.com/CZs6ol0UR3w4wwDwt5tbge?mode=ac_t"
+              href="https://chat.whatsapp.com/HHiV2OETRQc23xkpo2Mx7V"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-8 h-8 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition-colors"
@@ -154,7 +154,7 @@ export function Navbar() {
               <HeartHandshake className="mr-2 h-4 w-4" /> Donate
             </Link>
             <a
-              href="https://chat.whatsapp.com/CZs6ol0UR3w4wwDwt5tbge?mode=ac_t"
+              href="https://chat.whatsapp.com/HHiV2OETRQc23xkpo2Mx7V"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center w-10 h-10 bg-green-600 hover:bg-green-700 text-white rounded-lg shadow-md transition-colors"
